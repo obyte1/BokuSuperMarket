@@ -19,7 +19,7 @@ const userSchema = new mongose.Schema({
         type: String,
         required: true
     },
-    hasAtmCard: {
+    HasAdminAccess: {
         type: Boolean,
         default: false
     },
@@ -29,13 +29,16 @@ const userSchema = new mongose.Schema({
     },
     role: {
         type: String,
-        enum: ['admin', 'user'],
+        enum: ['superadmin', 'storekeeper', 'salesperson'], // Define the allowed roles
         default: 'user'
     },
     
-    timestamps: true //Date created and updated at
     
-});
+},
+{timestamps: true} 
+);
 
 //create model from schema
 const User = mongose.model('User', userSchema);
+
+module.exports = User; //export the model to be used in other files
