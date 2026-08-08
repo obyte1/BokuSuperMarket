@@ -8,7 +8,7 @@ const userSchema = new mongose.Schema({
     },
     email: {
         type: String,
-        required: true,
+        required: false,
         unique: true
     },
     password: {
@@ -30,7 +30,7 @@ const userSchema = new mongose.Schema({
     role: {
         type: String,
         enum: ['superadmin', 'storekeeper', 'salesperson'], // Define the allowed roles
-        default: 'user'
+        default: 'salesperson'
     },
     
     

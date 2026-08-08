@@ -8,6 +8,8 @@ const productController = require('../Controllers/ProductController');
 router.post('/createproduct', productController.createProduct);
 
 router.put('/updateproduct/:id', productController.updateProduct);
+router.get('/getproductbyid/:id', productController.getProductById);
+router.get('/getallproducts', productController.getAllProducts);
 
-//exprort the router to be used in other files
+//export the router to be used in other files
 module.exports = router;
